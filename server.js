@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get('/grab', (req,res) => {
     const data = req.query.data;
     texto += data;
-    res.send(data);
+    res.send(texto);
 })
 
 app.get('/read', (req,res) => {
