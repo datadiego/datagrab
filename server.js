@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
+const escapeHtml = require('escape-html');
 app.use(cors());
 
 let texto = "";
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/grab', (req,res) => {
     const data = req.query.data;
-    texto += data;
+    texto += escapeHtml(data);
     res.send(texto);
 })
 
